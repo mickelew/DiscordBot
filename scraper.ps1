@@ -7,4 +7,6 @@ $datePattern = 'title="Available.*'
 
 $results = $content | Select-String $datePattern -AllMatches
 
-echo $results.Matches.Value
+$test = $results.Matches.Value -replace '(^title=\")|(<br>)|($*">)'
+
+echo $test
